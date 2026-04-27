@@ -54,4 +54,4 @@ Current version: 2.1.0. The full changelog lives inside `SKILL.md`. This reposit
 ## Author
 Edmond Francis
 
-[LinkedIn](url) [GitHub](url) [Twitter/X](https://x.com/theedmind)
+[LinkedIn](https://www.linkedin.com/in/edmond-francis-7a3764395/) | [Substack](https://leveragedfuture.substack.com/) | [𝕏](https://x.com/theedmind)
