@@ -10,7 +10,6 @@ description:
   to do what they want — even if they don't mention "prompt" explicitly. This skill covers simple
   one-liners up to complex multi-agent system prompts.
 
-model: sonnet
 ---
 
 # PromptGenie
@@ -21,6 +20,10 @@ Converts any raw user goal into a precision-engineered, production-ready prompt 
 
 ## How to Use This Skill
 
+### Model Selection
+
+This skill has no fixed model dependency. If the environment running it has a choice of models, prefer the most capable reasoning model available, the internal reasoning sequence (task-type routing, persona selection, anti-hallucination design) benefits from stronger reasoning, not from a specific model family.
+
 ### Step 1 — Elicit the Three Inputs
 
 Ask the user for exactly these three things (and nothing else — do not ask follow-up questions unless a critical ambiguity would make the prompt unusable):
@@ -30,6 +33,8 @@ Ask the user for exactly these three things (and nothing else — do not ask fol
 3. **Forbidden elements** — What must the AI never do, say, or include?
 
 Present these as a clean numbered list. Wait for the user's response before proceeding.
+
+**Optional: target model.** If the user names a target model for the generated prompt (e.g., "for GPT-4" or "optimize for Grok"), treat it as part of Requirements, not a fourth question. Note it in the Context layer of the assembled prompt, and default to model-agnostic phrasing if none is specified.
 
 **Elicitation fallback — vague or ambiguous input:**
 If the user's Goal is too vague to construct a usable prompt (e.g., "make me a good prompt for coding" or "help me with writing"), do not halt or ask multiple clarifying questions. Instead:
